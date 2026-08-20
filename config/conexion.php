@@ -1,11 +1,13 @@
 <?php
-    $dsn = 'mysql:host=localhost;dbname=empleado';
-    $username = 'root';
-    $password = '';
-    try{
-        $conexion = new PDO($dsn, $username, $password);
-        $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo 'Conexión exitosa a la base de datos';
-    }catch(PDOException $e){
-        echo 'Error de conexión: ' . $e->getMessage();
-    }
+define('BASE_URL', '/Tareas/');
+
+$dsn = "mysql:host=localhost;dbname=empleados";
+$username = "root";
+$password = "";
+
+try {
+    $conexion = new PDO($dsn, $username, $password);
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Error de conexión: " . $e->getMessage());
+}
